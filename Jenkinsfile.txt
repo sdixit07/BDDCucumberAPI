@@ -1,6 +1,15 @@
 pipeline {
     agent any
-    stages {		
+    stages {	
+
+		stage('Cleanup Workspace') {
+            steps {
+                cleanWs()
+                sh """
+                echo "Cleaned Up Workspace For Project"
+                """
+            }
+        }
 					
 		//Code starts for stage Clean
         stage('Clean') {
@@ -11,23 +20,6 @@ pipeline {
 		//Code ends for stage Clean
 		
 			
-		//Code starts for stage Compile
-		stage('Compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-		//Code Ends for stage Compile
-		
-				
-	   //Code starts for stage Install
-        stage('Install') {
-            steps {
-                sh 'mvn install -DskipTests'
-            }
-        }
-        //Code ends for stage Install
-     
        
         //Code starts for stage System Test
         stage('System Test') {
