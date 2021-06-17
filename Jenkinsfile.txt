@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    stages {		
+					
+		//Code starts for stage Clean
+        stage('Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+		//Code ends for stage Clean
+		
+			
+		//Code starts for stage Compile
+		stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+		//Code Ends for stage Compile
+		
+				
+	   //Code starts for stage Install
+        stage('Install') {
+            steps {
+                sh 'mvn install -DskipTests'
+            }
+        }
+        //Code ends for stage Install
+     
+       
+        //Code starts for stage System Test
+        stage('System Test') {
+            steps {
+                //Change git url below as per your forked github repository URL
+                git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
+                sh 'mvn test -Dcucumber.filter.tags="@smoke"'
+            }
+        }
+		//Code ends for stage System Test
+		
+    }
+}
