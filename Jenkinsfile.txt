@@ -5,8 +5,10 @@ pipeline {
 	/*	stage('Cleanup Workspace') {
             steps {
                 cleanWs()
-                sh """
-                echo "Cleaned Up Workspace For Project"
+                bat '''
+                bat 'start cmd.exe /c call echo "Cleaned Up Workspace For Project"
+                stop
+                EXIT /B 0
                 """
             }
         } */
@@ -16,8 +18,11 @@ pipeline {
         stage('System Test') {
             steps {
                 //Change git url below as per your forked github repository URL
-                git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
-                sh 'mvn test -Dcucumber.filter.tags="@smoke"'
+               // git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
+               // sh 'mvn test -Dcucumber.filter.tags="@smoke"'
+               dir("build_folder"){
+                     bat "runner.bat"
+                 }
             }
         }
 		//Code ends for stage System Test
