@@ -21,7 +21,7 @@ pipeline {
                // git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
                // sh 'mvn test -Dcucumber.filter.tags="@smoke"'
                dir("build_folder"){
-                     bat "mvn test -Dcucumber.filter.tags="@smoke""
+                     bat 'mvn test -Dcucumber.filter.tags="@smoke"'
                  }
             }
         }
