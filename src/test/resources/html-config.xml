@@ -29,9 +29,7 @@
         <scripts>
             <![CDATA[
                 $(document).ready(function() {
-                    $('#parent-analysis').click(function(){
-                        $('#nav-test').trigger('click');
-                    }
+                   
 
                 });
             ]]>
