@@ -2,16 +2,14 @@ pipeline {
     agent any
     stages {	
 
-	/*	stage('Cleanup Workspace') {
+		stage('Cleanup Workspace') {
             steps {
                 cleanWs()
-                bat '''
-                bat 'start cmd.exe /c call echo "Cleaned Up Workspace For Project"
-                stop
-                EXIT /B 0
-                """
+                bat 'call echo "Cleaned Up Workspace For Project"
+
+
             }
-        } */
+        }
 				
        
         //Code starts for stage System Test
@@ -22,7 +20,7 @@ pipeline {
                // sh 'mvn test -Dcucumber.filter.tags="@smoke"'
 
                      bat 'mvn test -Dcucumber.filter.tags="@smoke"'
-                 
+
             }
         }
 		//Code ends for stage System Test
