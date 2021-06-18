@@ -23,12 +23,16 @@ pipeline {
 		//Code ends for stage System Test
 		
     }
-	post{
-	publishHTML (Report : [allowMissing: false,
- alwaysLinkToLastBuild: true,
- keepAll: true,
- reportDir: 'reports',
- reportFiles: 'Extent.html',
- reportTitles: 'The Report'])
-	}
+	
+	post { 
+        always { 
+            publishHTML (Report : [allowMissing: false,
+								alwaysLinkToLastBuild: true,
+								keepAll: true,
+								reportDir: 'reports',
+								reportFiles: 'Extent.html',
+								reportTitles: 'The Report'])
+        }
+    }
+	
 }
