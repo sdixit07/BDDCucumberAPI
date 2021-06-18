@@ -18,7 +18,7 @@ pipeline {
                 //Change git url below as per your forked github repository URL
                // git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
                // sh 'mvn test -Dcucumber.filter.tags="@smoke"'
-
+                    git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
                      bat 'mvn test -Dcucumber.filter.tags="@smoke"'
 
             }
