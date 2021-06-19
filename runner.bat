@@ -1,1 +1,0 @@
-call mvn test -Dcucumber.filter.tags="@smoke"
