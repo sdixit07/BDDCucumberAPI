@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(plugin = {"pretty", "html:Report/Cucumber.html"},
         glue = "stepdefinitions",
         features = "./src/main/resources/Features/",
-        tags = "UI")
+        tags = "@API,@UI")
 
 public class TestRunner {
 }
-    
