@@ -29,6 +29,17 @@ pipeline {
                     }
                  }
         //Code ends for stage UI Test
+
+        //Code starts for stage Smoke Test
+                  stage('Smoke Test') {
+                      steps {
+                      //Integration between the repositories in the git
+                        git url: 'https://github.com/sdixit07/BDDCucumberUI.git'
+                        sh 'mvn test -Dcucumber.filter.tags="@smoke"'
+                      }
+                  }
+        //Code ends for stage Smoke Test
+
 		
     }
 	
