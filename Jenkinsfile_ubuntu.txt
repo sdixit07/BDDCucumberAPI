@@ -23,7 +23,7 @@ pipeline {
 		//Code ends for stage API Test
 
 		//Code starts for stage UI Test
-                stage('API Test') {
+                stage('UI Test') {
                     steps {
                        sh 'mvn test -Dcucumber.filter.tags="@UI"'
                     }
