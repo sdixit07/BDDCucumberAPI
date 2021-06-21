@@ -14,7 +14,7 @@ import utils.Helper;
 
 import java.io.IOException;
 
-public class MyStepdefs {
+public class StepDefinitionAPI {
     public static String BASE_URL = "http://demowebshop.tricentis.com";
     RequestSpecification request;
     Response response;

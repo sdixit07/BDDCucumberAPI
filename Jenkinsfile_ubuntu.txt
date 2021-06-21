@@ -13,15 +13,22 @@ pipeline {
         }
 				
        
-        //Code starts for stage System Test
-        stage('System Test') {
+        //Code starts for stage API Test
+        stage('API Test') {
             steps {
-               //Change git url below as per your forked github repository URL
                git url: 'https://github.com/sdixit07/BDDCucumberAPI.git'
-               sh 'mvn test -Dcucumber.filter.tags="@smoke"'
+               sh 'mvn test -Dcucumber.filter.tags="@API"'
             }
         }
-		//Code ends for stage System Test
+		//Code ends for stage API Test
+
+		//Code starts for stage UI Test
+                stage('API Test') {
+                    steps {
+                       sh 'mvn test -Dcucumber.filter.tags="@UI"'
+                    }
+                 }
+        //Code ends for stage UI Test
 		
     }
 	
