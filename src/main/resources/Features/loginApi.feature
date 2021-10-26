@@ -1,6 +1,7 @@
+@smoke
 Feature: Login API test
 
-  @smoke
+
   Scenario Outline: Login test
     Given I prepare the Endpoint
     When I set the content type as "multipart/form-data"

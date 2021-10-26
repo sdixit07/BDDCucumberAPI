@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         glue = "stepdefinitions",
         features = "./src/main/resources/Features/",
-        tags = "smoke")
+        tags = "@smoke")
 
 public class TestRunner {
 }
